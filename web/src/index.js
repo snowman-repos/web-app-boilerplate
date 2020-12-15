@@ -1,3 +1,5 @@
+import { AuthProvider } from '@redwoodjs/auth'
+import netlifyIdentity from 'netlify-identity-widget'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import ReactDOM from 'react-dom'
@@ -32,14 +34,18 @@ const darkTheme = createMuiTheme({
   },
 })
 
+netlifyIdentity.init()
+
 ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <Routes />
-      </ThemeProvider>
-    </RedwoodProvider>
+    <AuthProvider client={netlifyIdentity} type="netlify">
+      <RedwoodProvider>
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <Routes />
+        </ThemeProvider>
+      </RedwoodProvider>
+    </AuthProvider>
   </FatalErrorBoundary>,
   document.getElementById('redwood-app')
 )
