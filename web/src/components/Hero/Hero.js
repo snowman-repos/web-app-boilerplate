@@ -20,7 +20,7 @@ const Hero = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.heroContent}>
+    <div className={classes.heroContent} data-testid="hero">
       <Container maxWidth="sm">
         <Typography
           component="h1"
