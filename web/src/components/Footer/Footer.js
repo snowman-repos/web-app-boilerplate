@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer} data-testid="footer">
       <Container maxWidth="sm">
-        <Typography variant="body1">The footer can be found here.</Typography>
+        <Typography variant="body1">This is the site footer.</Typography>
         <Copyright />
       </Container>
     </footer>
