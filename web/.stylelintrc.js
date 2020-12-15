@@ -31,7 +31,13 @@ module.exports = {
     'property-no-unknown': true,
     'selector-pseudo-class-no-unknown': true,
     'selector-pseudo-element-no-unknown': true,
-    'selector-type-no-unknown': true,
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignore: ['custom-elements'],
+        ignoreTypes: ['string'],
+      },
+    ],
     'string-no-newline': true,
     'value-list-comma-newline-after': 'always-multi-line',
     'value-list-comma-space-after': 'always-single-line',

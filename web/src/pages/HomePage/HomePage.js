@@ -1,8 +1,11 @@
+import Hero from 'src/components/Hero'
+import PublicLayout from 'src/layouts/PublicLayout'
+
 function HomePage() {
   return (
-    <>
-      <h1>HomePage</h1>
-    </>
+    <PublicLayout>
+      <Hero />
+    </PublicLayout>
   )
 }
 
