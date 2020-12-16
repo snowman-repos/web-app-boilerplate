@@ -9,8 +9,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import { useAuth } from '@redwoodjs/auth'
 import { useState } from 'react'
 
-// sidebar menu
-
 const useStyles = makeStyles((theme) => ({
   root: {
     /* stylelint-disable-next-line */
