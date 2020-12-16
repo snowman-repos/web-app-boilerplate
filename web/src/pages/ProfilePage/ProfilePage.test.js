@@ -1,14 +1,14 @@
 import { render, cleanup } from '@redwoodjs/testing'
 
-import DashboardPage from './DashboardPage'
+import ProfilePage from './ProfilePage'
 
-describe('DashboardPage', () => {
+describe('ProfilePage', () => {
   afterEach(() => {
     cleanup()
   })
   it('renders successfully', () => {
     expect(() => {
-      render(<DashboardPage />)
+      render(<ProfilePage />)
     }).not.toThrow()
   })
 })
