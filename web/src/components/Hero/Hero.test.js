@@ -18,8 +18,6 @@ describe('Hero', () => {
     expect(
       screen.getByText('Main call to action', { exact: false })
     ).toBeInTheDocument()
-    expect(
-      screen.getByText('Secondary action', { exact: false })
-    ).toBeInTheDocument()
+    expect(screen.getByText('Log in', { exact: false })).toBeInTheDocument()
   })
 })

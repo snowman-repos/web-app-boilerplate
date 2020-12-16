@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import { useAuth } from '@redwoodjs/auth'
 
 const useStyles = makeStyles((theme) => ({
   /* stylelint-disable-next-line */
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Hero = () => {
   const classes = useStyles()
+  const { logIn } = useAuth()
 
   return (
     <div className={classes.heroContent} data-testid="hero">
@@ -45,8 +47,8 @@ const Hero = () => {
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
-                Secondary action
+              <Button variant="contained" color="primary" onClick={logIn}>
+                Log in
               </Button>
             </Grid>
           </Grid>

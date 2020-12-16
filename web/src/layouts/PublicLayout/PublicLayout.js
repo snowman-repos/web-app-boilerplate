@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
 
 const PublicLayout = ({ children }) => {
   const classes = useStyles()
-  const { logIn, logOut, isAuthenticated } = useAuth()
+  const { isAuthenticated } = useAuth()
 
   useEffect(() => {
     if (isAuthenticated) navigate(routes.dashboard())
@@ -23,9 +23,6 @@ const PublicLayout = ({ children }) => {
   return (
     <div className={classes.root}>
       {children}
-      <button onClick={isAuthenticated ? logOut : logIn}>
-        {isAuthenticated ? 'Log Out' : 'Log In'}
-      </button>
       <Footer />
     </div>
   )
