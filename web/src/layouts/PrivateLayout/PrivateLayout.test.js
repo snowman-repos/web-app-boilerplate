@@ -16,4 +16,8 @@ describe('PrivateLayout', () => {
     render(<PrivateLayout />)
     expect(screen.getByTestId('appbar')).toBeInTheDocument()
   })
+  it('has an Sidebar component', () => {
+    render(<PrivateLayout />)
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument()
+  })
 })

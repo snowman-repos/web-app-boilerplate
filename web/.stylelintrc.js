@@ -34,7 +34,7 @@ module.exports = {
     'selector-type-no-unknown': [
       true,
       {
-        ignore: ['custom-elements'],
+        ignore: ['custom-elements', 'default-namespace'],
         ignoreTypes: ['string'],
       },
     ],

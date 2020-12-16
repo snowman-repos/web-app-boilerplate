@@ -68,11 +68,11 @@ const AppBarComponent = (props) => {
       <AppBar position="fixed">
         <Toolbar variant="dense">
           <IconButton
-            aria-label="navigation toggle"
+            aria-label="sidebar toggle"
             color="inherit"
-            data-testid="navigation button"
+            data-testid="sidebar button"
             edge="start"
-            onClick={() => {}}
+            onClick={props.toggleSidebar}
           >
             <MenuIcon />
           </IconButton>

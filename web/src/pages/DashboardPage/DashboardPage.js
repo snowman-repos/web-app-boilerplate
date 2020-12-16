@@ -1,9 +1,12 @@
 import PrivateLayout from 'src/layouts/PrivateLayout'
+import Typography from '@material-ui/core/Typography'
 
 const DashboardPage = () => {
   return (
     <PrivateLayout>
-      <h1>Dashboard</h1>
+      <Typography component="h1" variant="h4" gutterBottom>
+        Dashboard
+      </Typography>
     </PrivateLayout>
   )
 }
