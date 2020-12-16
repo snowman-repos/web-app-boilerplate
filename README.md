@@ -3,6 +3,9 @@
 A customized setup for a [RedwoodJS](https://redwoodjs.com/tutorial/welcome-to-redwood) (♥️) app with a Material UI theme and authentication built in.
 - Public landing page with hero component
 - Private dashboard page with an app bar and slide-in sidebar navigation menu.
+
+![Public landing page](https://i.imgur.com/TZN9Aej.png)
+![Private dashboard page](https://i.imgur.com/uMra2x4.png)
 ### Features
 
 - Opinionated defaults for formatting, file organization, webpack, Babel, and more.
@@ -50,7 +53,7 @@ Your browser should open automatically to `http://localhost:8910` to see the web
 | `yarn rw g deploy <provider>` | Generate a deployment configuration |
 | `yarn rw g function <name>` | Generate a Function |
 | `yarn rw g layout <name>` | Generate a layout component |
-| `yarn rw g page <name> [path]	Generate a page component |
+| `yarn rw g page <name> [path]` | Generate a page component |
 | `yarn rw g scaffold <model>` | Generate Pages, SDL, and Services files based | `yarn rw g on a given DB schema Model. Also accepts <path/model> |
 | `yarn rw g sdl <model>` | Generate a GraphQL schema and service object |
 | `yarn rw g service <name>` | Generate a service component |
