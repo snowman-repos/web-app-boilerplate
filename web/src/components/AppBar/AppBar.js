@@ -9,7 +9,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import { useAuth } from '@redwoodjs/auth'
 import { useState } from 'react'
 
-// test with button click...?
 // sidebar menu
 
 const useStyles = makeStyles((theme) => ({
@@ -28,15 +27,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AppBarComponent = () => {
+const AppBarComponent = (props) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const classes = useStyles()
   const { logOut } = useAuth()
   const isMenuOpen = Boolean(anchorEl)
   const menuId = 'account-menu'
+  const { onChange = () => {} } = props
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget)
+    onChange(event.currentTarget)
   }
 
   const logout = () => {
@@ -52,12 +53,13 @@ const AppBarComponent = () => {
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      className={classes.menu}
+      data-testid="menu"
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
       onClose={handleMenuClose}
-      className={classes.menu}
+      open={isMenuOpen}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
     >
       <MenuItem onClick={logout}>Logout</MenuItem>
     </Menu>
@@ -68,9 +70,9 @@ const AppBarComponent = () => {
       <AppBar position="fixed">
         <Toolbar variant="dense">
           <IconButton
-            aria-label="menu"
+            aria-label="navigation toggle"
             color="inherit"
-            data-testid="menu button"
+            data-testid="navigation button"
             edge="start"
             onClick={() => {}}
           >
@@ -80,9 +82,9 @@ const AppBarComponent = () => {
           <IconButton
             aria-controls=""
             aria-haspopup="true"
-            aria-label="Current user"
+            aria-label="menu toggle"
             color="inherit"
-            data-testid="account button"
+            data-testid="menu button"
             edge="end"
             onClick={handleMenuOpen}
           >
