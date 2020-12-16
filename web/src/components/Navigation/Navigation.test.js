@@ -12,6 +12,10 @@ describe('Navigation', () => {
       render(<Navigation />)
     }).not.toThrow()
   })
+  it('has a "Dashboard" navigation menu item', () => {
+    render(<Navigation />)
+    expect(screen.getByText('Dashboard')).toBeInTheDocument()
+  })
   it('has a "Profile" navigation menu item', () => {
     render(<Navigation />)
     expect(screen.getByText('Profile')).toBeInTheDocument()
