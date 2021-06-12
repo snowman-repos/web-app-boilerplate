@@ -1,12 +1,7 @@
 import Hero from 'src/components/Hero'
-import PublicLayout from 'src/layouts/PublicLayout'
 
 function HomePage() {
-  return (
-    <PublicLayout>
-      <Hero />
-    </PublicLayout>
-  )
+  return <Hero />
 }
 
 export default HomePage
