@@ -13,25 +13,21 @@
     ]
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.2",
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "@material-ui/system": "^4.11.2",
-    "@redwoodjs/auth": "^0.21.0",
-    "@redwoodjs/forms": "^0.21.0",
-    "@redwoodjs/router": "^0.21.0",
-    "@redwoodjs/web": "^0.21.0",
+    "@material-ui/system": "^4.11.3",
+    "@redwoodjs/auth": "^0.33.3",
+    "@redwoodjs/forms": "^v0.33.2",
+    "@redwoodjs/router": "^v0.33.2",
+    "@redwoodjs/web": "^v0.33.2",
     "netlify-identity-widget": "^1.9.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "prettier-stylelint": "^0.4.2",
-    "stylelint": "^13.8.0",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0"
-  },
-  "scripts": {
-    "stylelint-fix": "stylelint src/**/*.css --fix"
   }
 }

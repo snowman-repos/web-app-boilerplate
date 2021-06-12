@@ -1,14 +1,14 @@
 import { AuthProvider } from '@redwoodjs/auth'
 import netlifyIdentity from 'netlify-identity-widget'
+import { isBrowser } from '@redwoodjs/prerender/browserUtils'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import ReactDOM from 'react-dom'
-import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
-import FatalErrorPage from 'src/pages/FatalErrorPage'
+import { FatalErrorBoundary } from '@redwoodjs/web'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
+import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 
-import './scaffold.css'
 import './index.css'
 
 const darkTheme = createMuiTheme({
@@ -34,18 +34,19 @@ const darkTheme = createMuiTheme({
   },
 })
 
-netlifyIdentity.init()
+isBrowser && netlifyIdentity.init()
 
-ReactDOM.render(
+const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <AuthProvider client={netlifyIdentity} type="netlify">
-      <RedwoodProvider>
+      <RedwoodApolloProvider>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <Routes />
         </ThemeProvider>
-      </RedwoodProvider>
+      </RedwoodApolloProvider>
     </AuthProvider>
-  </FatalErrorBoundary>,
-  document.getElementById('redwood-app')
+  </FatalErrorBoundary>
 )
+
+export default App
